@@ -42,7 +42,6 @@ elif (a == zona[2]):
             costo = 300
 if c == "bassa":
     costoS = costo -((costo*20)/100)
-    print(costoS)
+    print("il prezzo e: ",costoS)
 else:
-    print(costo)
-
+    print("il prezzo e:",costo)
