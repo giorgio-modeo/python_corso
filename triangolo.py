@@ -1,15 +1,13 @@
-import _thread
+import _thread as th
+import time as t
 def print_time(threadName):
     n=0
     while True:
-        print("pdio",n)
         n+=1
+        print(f"\npdio {n} {threadName}")
 # Create two threads as follows
-try:
-   _thread.start_new_thread( print_time, ("Thread-1",) )
-   _thread.start_new_thread( print_time, ("Thread-2",) )
-except:
-   print("Error: unable to start thread")
+th.start_new_thread( print_time, ("Thread-1",) )
+th.start_new_thread( print_time, ("Thread-2",) )
 
 while 1:
    pass
