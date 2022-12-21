@@ -1,4 +1,4 @@
-#modeo giorgiob
+#modeo giorgio
 
 selezzione = str(input('\nselezzionare la via percorsa dal camion: \n\nper il primo esercizzio \n-digitare "p"\n\nper il secondo esercizzio \n-caso a "a",\n-caso b "b", \n-caso c "c" \n\ndigita la tua scelta: '))
 
