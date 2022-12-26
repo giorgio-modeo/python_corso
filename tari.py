@@ -14,9 +14,11 @@ m = """
 print(m)
 
 menu = input(": ")
-if menu == 1:
-    print("funziono")
 
+match menu:
+    case 1:
+        prin("funziona")
+stop = input("")        
 
 
 
