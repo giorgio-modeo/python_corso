@@ -13,10 +13,9 @@ m = """
 """
 print(m)
 
-menu = input(":")
-match menu:
-   case  1:
-
+menu = input(": ")
+if menu == 1:
+    print("funziono")
 
 
 
