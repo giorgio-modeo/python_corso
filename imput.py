@@ -2,7 +2,7 @@ def inp(st,n1,n2):
     while True:
         try:
             numero=int(input(st))
-            if numero <= n1 and numero <= n2:
+            if numero >= n1 and numero <= n2:
                 break
             else:
                 print("il numero non e nel intervallo")

@@ -23,8 +23,10 @@ def str_to_split(stringa):
         lista.append(word)
     return lista
 
-def main():
-    
-
+def main(lista):
+    stringa = str(input("inserisci la parola o frase"))
+    str_to_split()
+    print(lista)
+    return stringa
+main()
         
-stringa = str(input("inserisci la parola o frase"))
