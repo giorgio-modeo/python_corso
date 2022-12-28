@@ -81,7 +81,7 @@ def f_menu():
             info()
             
         case _:
-            print("uscita")  ù
+            print("uscita")  
             pass
             
             
