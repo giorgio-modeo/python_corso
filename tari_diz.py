@@ -14,7 +14,7 @@ tari={
         2:[1.45422,107.33850],
         3:[1.62440,128.30696]
     },
-    'box':[0.34758,0.35771]
+    'box':[0.34758,0.35771],
 }
 
 uno = """ 
@@ -112,10 +112,14 @@ def comp_fam(n1,n2,mq):
 
 
 def calc_T(n1,n2,n3):
-    global i
+    global i,tot_s_r
     tari.update([(f'tot_{i}' , [n3*n1])])
     tari[f'tot_{i}']+=[tari[f'tot_{i}'][0] + n2]
     tari[f'tot_{i}']+=[tari[f'tot_{i}'][1]-((tari[f'tot_{i}'][1]*5)/100)]
+    tot_r = round(tari[f'tot_{i}'][1],5)
+    tot_s_r = round(tari[f'tot_{i}'][2],5)
+    print(f'\nil totale e: {tot_r}€ \nil totale scontato e: {tot_s_r}€ ')
+    input("premere invio per continuare...")    
     i =+ 1
     
 
@@ -124,11 +128,8 @@ def calc_T(n1,n2,n3):
 
 def info():
     try:
-        print(i,tari)
-        t_var_r = round(tari['tot_0'][0],5)
-        tot_r = round(tari['tot_0'][1],5)
-        tot_s_r = round(tari['tot_0'][2],5)
-        print(f"{t_var_r}€ di tassa variabile \n{tot_r}€ di totale \n{tot_s_r}€ il totale scontato")
+        print(tari.keys('tot'))
+        print(tari[f'tot_{i}'][2])
         input("premere invio per continuare...")
     except:
         print("attenzione inserire prima i dati")
