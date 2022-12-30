@@ -58,10 +58,12 @@ def main():
 
 #                                                                                   + controllo input
 def C_inp(st):
-    try:
-        inp.append(float(input(st)))
-    except:
-        print("hai sbagliato input reinserisci il dato")
+    while True:
+        try:
+            inp.append(float(input(st)))
+            break
+        except:
+            print("hai sbagliato input reinserisci il dato")
 
 #                                                                                   + funzione menu
 def f_menu():
@@ -166,7 +168,6 @@ def info():
         print("attenzione inserire prima i dati")
         C_inp(uno)
         categoria()
-
 main()
-
-
+# 118 stringe compilate
+# 41 commenti
