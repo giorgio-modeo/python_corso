@@ -1,6 +1,6 @@
 #Giorgio Bruno Modeo
 
-menu = """
+gest_scon = """
             ********************************
             *       GESTIONE SCONTRINO     *
             ********************************
@@ -18,10 +18,16 @@ menu = """
 
 articolo = {}
 inp = []
+a = True
 def main():
-    while True:
-        a = int(input(f"{menu}\ninserire la scelta: "))
-        match a:
+    while a:
+        del inp[:]
+        menu()
+
+
+def menu():
+        scelta = int(input(f"{gest_scon}\ninserire la scelta: "))
+        match scelta:
             case 1:
                 print("INSERIMENTO ARTICOLO")
                 c_input()
@@ -33,8 +39,8 @@ def main():
                 scontrino()
             case _:
                 print("exit")
-                break
-        print(articolo)
+                global a
+                a = False
 def c_input():
     while True:
         try:
@@ -58,4 +64,9 @@ def sconto():
             articolo[f'{inp[0]}_scontato'] += [round((articolo[f'{inp[0]}_scontato'][0] - ((articolo[f'{inp[0]}_scontato'][0]*7)/100)),2)]
             print(f"\nulteriore sconto applicato 7%\n({articolo[f'{inp[0]}_scontato'][0]} * 7) /100 \nnuovo totale: {articolo[f'{inp[0]}_scontato'][1]}€")
 
+def scontrino():
+        print("articolo:    prezzo:     QUANTITÀ:")
+        for key in articolo:
+            print(f"{key}           {articolo[key][0]}           {articolo[key][1]}   ")
+        print(articolo)
 main()
