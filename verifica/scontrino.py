@@ -16,7 +16,7 @@ gest_scon = """
 
 """
 
-articolo = {}
+articolo,articolo_s = {},{}
 inp = []
 a = True
 def main():
@@ -51,22 +51,29 @@ def c_input():
             break
         except:
             print("dato sbagliato riprova!")
+            del inp[:]
     articolo.update([(inp[0],[inp[1],inp[2],(inp[1] * inp[2])])])
-
+    input("premere invio per continuare...")
+    
 def sconto():
-    global b
-    b = True
-    if 50 <= articolo[inp[0]][2]:
-        articolo.update([(f'{inp[0]}_scontato',[(articolo[inp[0]][2] - ((articolo[inp[0]][2]*2)/100))] )])
-        print(f"\nsconto applicato 2%\n({articolo[inp[0]][2]} * 2)/100 \nprezzo scontato: {articolo[f'{inp[0]}_scontato'][0]}€")
+    for key in articolo:
+        if 50 <= articolo[key][2]:
+            articolo_s.update([(f'{key}_scontato',[(articolo[key][2] - ((articolo[key][2]*2)/100))] )])
+            print(f"\nsconto applicato 2%\n({articolo[key][2]} * 2)/100 \nprezzo scontato: {articolo_s[f'{key}_scontato'][0]}€")
 
-        if 5 < articolo[inp[0]][1]:
-            articolo[f'{inp[0]}_scontato'] += [round((articolo[f'{inp[0]}_scontato'][0] - ((articolo[f'{inp[0]}_scontato'][0]*7)/100)),2)]
-            print(f"\nulteriore sconto applicato 7%\n({articolo[f'{inp[0]}_scontato'][0]} * 7) /100 \nnuovo totale: {articolo[f'{inp[0]}_scontato'][1]}€")
-
+            if 5 < articolo[key][1]:
+                articolo_s[f'{key}_scontato'] += [round((articolo_s[f'{key}_scontato'][0] - ((articolo_s[f'{key}_scontato'][0]*7)/100)),2)]
+                print(f"ulteriore sconto applicato 7%\n({articolo_s[f'{key}_scontato'][0]} * 7) /100 \nnuovo totale: {articolo_s[f'{key}_scontato'][1]}€\n")
+        else:
+            print(f"{key}: non ha sconti applicabili\n")
+    input("premere invio per continuare...")
+    
 def scontrino():
-        print("articolo:    prezzo:     QUANTITÀ:")
+        print("ARTICOLO:    PREZZO:     QUANTITÀ:     PREZZO SCONTATO")
         for key in articolo:
-            print(f"{key}           {articolo[key][0]}           {articolo[key][1]}   ")
-        print(articolo)
+            try:
+                print(f"{key}           {articolo[key][0]}           {articolo[key][1]}           {articolo_s[f'{key}_scontato'][1]}")
+            except:
+                print(f"{key}           {articolo[key][0]}           {articolo[key][1]}           {articolo[key][2]}")
+        input("premere invio per continuare...")
 main()
