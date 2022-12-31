@@ -68,7 +68,7 @@ def C_inp(st):
 #                                                                                   + funzione menu
 def f_menu():
     match inp[0]:
-#                                                                                      prima scelta la che tipo di proprieta su vuole utilizzare
+#                                                                                      prima scelta che tipo di proprieta sui vuole utilizzare
         case 1:
 #                                                                                         inserisco i dati
             C_inp(f"selezziona la proprieta di cui vuoi calcolare la tari {uno}: ")
