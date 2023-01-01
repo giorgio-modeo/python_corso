@@ -130,3 +130,5 @@ def scontrino():
         
     input("premere invio per continuare...")
 main()
+# 91 stringe compilate
+# 38 commenti
