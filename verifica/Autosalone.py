@@ -23,6 +23,7 @@ autovettura={}
 inp=[]
 def main():
     while a:
+        del inp[:]
         menu()
         
 def menu():
@@ -52,17 +53,25 @@ def menu():
             global a
             a = False
 def inserimento():
-    
-    inp.append(int(input("inserire l'anno della vettura: ")))
-    inp.append(str(input("inserire la marca della vettura: ")))
-    inp.append(int(input("inserire la cilindrata della vettura: ")))
-    inp.append(str(input("inserire il proprio nome: ")))
-    inp.append(str(input("inserire il proprio cognome: ")))
+    while True:
+        try:
+            inp.append(int(input("inserire l'anno della vettura: ")))
+            inp.append(str(input("inserire la marca della vettura: ")))
+            inp.append(int(input("inserire la cilindrata della vettura: ")))
+            inp.append(str(input("inserire il proprio nome: ")))
+            inp.append(str(input("inserire il proprio cognome: ")))
+            break
+        except:
+            os.system("cls")
+            print("hai sbagliato input reinserisci i dati\n")
     autovettura.update([(inp[0],[inp[1],inp[2],inp[3],inp[4]])]) 
     print(autovettura)
+
 def sup1500():
+    print("I clienti che hanno un autovettura con cilindrata superiore a 1500 sono")
     for key in autovettura:
-        print(autovettura[key][1][0])
-        input("premi spazzioper continuare")
+        if autovettura[key][1] >= 1500:
+            print("     ",{autovettura[key][3]})
+    input("premi spazzio per continuare...")
     
 main()
