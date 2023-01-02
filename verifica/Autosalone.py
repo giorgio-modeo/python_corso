@@ -19,7 +19,7 @@ autosalone = """
 
 """
 a = True
-autovettura=[]
+autovettura={}
 inp=[]
 def main():
     while a:
@@ -56,6 +56,7 @@ def inserimento():
     while True:
         try:
             inp.append(int(input("inserire l'anno della vettura: ")))
+            
             inp.append(str(input("inserire la marca della vettura: ")))
             inp.append(int(input("inserire la cilindrata della vettura: ")))
             inp.append(str(input("inserire il proprio nome: ")))
@@ -64,25 +65,12 @@ def inserimento():
         except:
             os.system("cls")
             print("hai sbagliato input reinserisci i dati\n")
-    autovettura.append({f"{inp[0]}": [inp[1],inp[2],inp[3],inp[4]]} ) 
-    print(type(autovettura),type(autovettura[0]))
+    autovettura.update([(inp[0],{inp[1]:[inp[2],inp[3],inp[4]]})]) 
 
 def sup1500():
-    i=0
-    print("I clienti che hanno un autovettura con cilindrata superiore a 1500 sono:")
-    print(autovettura)
-    for key in autovettura[0].items():
-        print(autovettura[0][0] )
-        print(i)
-        i =+ 1
-    input("premi spazzio per continuare...")
-    
+    print("I clienti che hanno un autovettura con cilindrata superiore a 1500 sono")
+    for key in autovettura:
+        for ch in autovettura[key]:
+            if autovettura[key][ch][0] >= 0:
+                print(f"    {autovettura[key][ch][2]}")
 main()
-#print autovettura [ 
-#print autovettura[0] {12: 
-#     [
-#       '12', 300, 'gio', 'mode'
-#      ]
-#   },
-# {120: ['31', 4000, 'gio', 'modeo']}
-#  ]
