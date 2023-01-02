@@ -19,7 +19,7 @@ autosalone = """
 
 """
 a = True
-autovettura={}
+autovettura=[]
 inp=[]
 def main():
     while a:
@@ -64,14 +64,25 @@ def inserimento():
         except:
             os.system("cls")
             print("hai sbagliato input reinserisci i dati\n")
-    autovettura.update([(inp[0],[inp[1],inp[2],inp[3],inp[4]])]) 
-    print(autovettura)
+    autovettura.append({f"{inp[0]}": [inp[1],inp[2],inp[3],inp[4]]} ) 
+    print(type(autovettura),type(autovettura[0]))
 
 def sup1500():
-    print("I clienti che hanno un autovettura con cilindrata superiore a 1500 sono")
-    for key in autovettura:
-        if autovettura[key][1] >= 1500:
-            print("     ",{autovettura[key][3]})
+    i=0
+    print("I clienti che hanno un autovettura con cilindrata superiore a 1500 sono:")
+    print(autovettura)
+    for key in autovettura[0].items():
+        print(autovettura[0][0] )
+        print(i)
+        i =+ 1
     input("premi spazzio per continuare...")
     
 main()
+#print autovettura [ 
+#print autovettura[0] {12: 
+#     [
+#       '12', 300, 'gio', 'mode'
+#      ]
+#   },
+# {120: ['31', 4000, 'gio', 'modeo']}
+#  ]
