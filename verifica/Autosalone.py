@@ -19,7 +19,7 @@ autosalone = """
 
 """
 a = True
-autovettura={}
+autovettura=[]
 inp=[]
 def main():
     while a:
@@ -56,7 +56,7 @@ def inserimento():
     while True:
         try:
             inp.append(int(input("inserire l'anno della vettura: ")))
-            
+
             inp.append(str(input("inserire la marca della vettura: ")))
             inp.append(int(input("inserire la cilindrata della vettura: ")))
             inp.append(str(input("inserire il proprio nome: ")))
@@ -65,12 +65,25 @@ def inserimento():
         except:
             os.system("cls")
             print("hai sbagliato input reinserisci i dati\n")
-    autovettura.update([(inp[0],{inp[1]:[inp[2],inp[3],inp[4]]})]) 
+    autovettura.append( {inp[0]:{inp[1]:[inp[2],inp[3],inp[4]]}} )
+    print(autovettura)
 
 def sup1500():
     print("I clienti che hanno un autovettura con cilindrata superiore a 1500 sono")
-    for key in autovettura:
-        for ch in autovettura[key]:
-            if autovettura[key][ch][0] >= 0:
-                print(f"    {autovettura[key][ch][2]}")
+    i =1
+    for i in autovettura:
+        for ch in autovettura[0]:
+            for key in autovettura[0][ch]:
+                print(autovettura)
+                print(autovettura[i])
+                print(autovettura[0][ch])
+                print(autovettura[0][ch][key])
+                print(autovettura[0][ch][key][0])
+                if autovettura[0][ch][key][0] >= 0:
+                    print(f"    {autovettura[0][ch][key][2]}")
+        i =+1
+        print(i)
+
+def tot_auto():
+    scelta = int(input("in"))
 main()
