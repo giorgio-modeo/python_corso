@@ -38,7 +38,6 @@ def switch(scontrino,scontrino_s):
             
             tot_art(scontrino)
             input("premi per continuare...")
-
         case 3:
             
             tot_sconti(scontrino,scontrino_s)
@@ -129,8 +128,8 @@ def inp_int(strin):
             print("input errato")
     return i
 
-#                                                                                   + input interi
-#                                                                                      questa funzione controlla che l'input passato sia un numero 
+#                                                                                   + input float
+#                                                                                      questa funzione controlla che l'input passato sia un numero con o senza virgola
 def inp_flt(strin):
     while True:
         try:
