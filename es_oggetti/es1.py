@@ -47,11 +47,14 @@ def main():
 #     print(totti.getNome(),totti.getCognome())
 #   per stampare tutto utilizziamo __str__
 #     print(totti)
+
+#   overloadding grazzie ai parametri opzionali
     nome = str(input("inserisci nome"))  
     cognome = str(input("inserisci cognome"))  
     altezza = inpnumero("inserisci altezza")  
     squadra = str(input("inserisci squadra"))
     a1=atleta(nome,cognome,altezza)
+#   parametri opzionali (anche se non si inseriscono ua quelli di default)
     a1.setSquadra(squadra)
     a1.setVisitamedica(True)
     print(a1)
