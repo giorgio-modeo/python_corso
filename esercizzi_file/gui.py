@@ -7,7 +7,7 @@ stream = open(nome_file, mode="r")
 print(stream.read())
 stream.close ()
 
-stream=open("esercizzi_file/prova.txt","w!",encoding="utf-8")
+stream=open("esercizzi_file/prova.txt","w.",encoding="utf-8")
 st="e una frase di prova\n"
 st1="questa frase e scritta al rigo successivo\n"
 stream.write(st+st1)
