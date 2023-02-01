@@ -18,6 +18,7 @@ ch3 = ('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
                  '!£$%#&=?0123456789')
 #inserisci quante psw vuoi inserire
 nP=int(input("Quante password vuoi generare?Fai attenzione hai a disposizione un range che va da 1 a 50:  "))
+
 if (nP <= 50 and nP >= 1):
     #scegli la lunghezza delle psw
     lP=int(input("Quanto vuoi che siano lunghe le password generate? Fai attenzione hai a disposizione un range che va da 10 a 20: "))
