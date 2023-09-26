@@ -22,12 +22,16 @@ def controllo_float(s):
     return f
 
 def controllo_string(s):
-    input = input(s)
+    stringa = input(s)
     while True:
-        if input == ""or" ":
+        if stringa == (""or" "):
             print("input invalido")
         else:
-            return input
+            return stringa
+
+#                                                            esempio utilizzo di controllo stringa
+# a = controllo_string("inserisci una parola")
+# print(a)
 
 def min_numero(num,minimo):
     if num > minimo:
@@ -65,3 +69,4 @@ def menu(titolo,voci:list):
 #                                                            esempio utilizzo del menu
 # voci = ["opzione 1","opzione 2","opzione 3","opzione 4"]
 # print(menu("titolo",["opzione 1","opzione 2","opzione 3","opzione 4"]))
+
